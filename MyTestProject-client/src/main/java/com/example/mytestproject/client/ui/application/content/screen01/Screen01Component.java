@@ -50,6 +50,7 @@ public class Screen01Component extends AbstractComponent<IScreen01Component.Cont
             logger.info("offsetHeight " + button.element().offsetHeight);
             
             logger.info("label offsetHeight " + label.element().offsetHeight);
+            logger.info("label scrollHeight " + label.element().scrollHeight);
             logger.info("label clientHeight " + label.element().clientHeight);
             
         });
