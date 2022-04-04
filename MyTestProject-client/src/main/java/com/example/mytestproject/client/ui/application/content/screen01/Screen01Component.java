@@ -3,14 +3,12 @@ package com.example.mytestproject.client.ui.application.content.screen01;
 import com.example.mytestproject.shared.model.MyModel;
 import com.github.nalukit.nalu.client.component.AbstractComponent;
 
-import elemental2.dom.Event;
 import elemental2.dom.HTMLElement;
 import java.lang.Override;
 import java.util.logging.Logger;
 
-import org.dominokit.domino.ui.button.Button;
 import org.dominokit.domino.ui.cards.Card;
-import org.dominokit.domino.ui.labels.Label;
+import org.dominokit.domino.ui.forms.TextBox;
 
 public class Screen01Component extends AbstractComponent<IScreen01Component.Controller, HTMLElement> implements IScreen01Component {
 
@@ -33,27 +31,11 @@ public class Screen01Component extends AbstractComponent<IScreen01Component.Cont
     @Override
     public void render() {
         card = Card.create("");
-        
-        Label label = Label.create("Hello");
-        card.appendChild(label);
-        label.add("lbl-hello");
 
-        Button button = Button.create("Submit");
-        card.appendChild(button);
-        button.addCss("btn-submit");
+        TextBox textBox = TextBox.create();
+        textBox.setLabel("Bank");
 
-        // button.setHeight("100px");
-
-        logger.info("height " + button.element().style.height.asString());
-        button.addClickListener((Event evt) -> {
-            logger.info("after click height " + button.element().style.height.asString());
-            logger.info("offsetHeight " + button.element().offsetHeight);
-            
-            logger.info("label offsetHeight " + label.element().offsetHeight);
-            logger.info("label scrollHeight " + label.element().scrollHeight);
-            logger.info("label clientHeight " + label.element().clientHeight);
-            
-        });
+        card.appendChild(textBox);
         initElement(card.element());
     }
 }
